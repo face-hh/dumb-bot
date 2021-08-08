@@ -34,7 +34,7 @@ module.exports = {
 			const category = categoryArray.filter(x => x === args[0].toLowerCase()).join('');
 
 			if (!category) return message.reply('I can\'t find this!');
-
+			console.log(category.toLowerCase());
 			const cmds = pepe.commands.filter(x => x.category.toLowerCase() === category.toLowerCase()).map(cmd => `\`${cmd.name}\``).join(' T ');
 			const cmdsEmbed = new MessageEmbed()
 				.setTitle(`${category.slice(0, 1).toUpperCase()}${category.slice(1)}`)
