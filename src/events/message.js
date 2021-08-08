@@ -1,9 +1,10 @@
 const Discord = require('discord.js')
-const prefix = 'dum '
-const utils = require('../utility/utils')
+const util = require('../utility/utils')
 module.exports = async (pepe, message) => {
 
     if (message.author.bot || !message.guild) return;
+    
+    const prefix = util.prefix
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
@@ -14,7 +15,7 @@ module.exports = async (pepe, message) => {
     if (!command) return;
 
     try {
-        command.run(pepe, message, args, utils)
+        command.run(pepe, message, args, util)
     } catch (error) {
         message.channel.send('Hmm error appeared :rolling_eyes:\n```md\n# ' + error + '```')
         console.log(error)
