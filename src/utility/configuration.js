@@ -2,28 +2,28 @@
 const Discord = require('discord.js');
 const { readdir, readdirSync } = require('fs');
 const { promisify } = require('util');
-const readdir = promisify(readdir);
+const preaddir = promisify(readdir);
 
-module.exports = async function configuration(client) {
+module.exports = async function configuration(pepe) {
 
-    const eventFiles = readdirSync('./events/').filter((file) => file.endsWith('.js'));
+    const eventFiles = readdirSync('./src/events/').filter((file) => file.endsWith('.js'));
     for (const file of eventFiles) {
         const event = require(`../events/${file}`);
         const eventName = file.split('.')[0];
-        client.on(eventName, event.bind(null, client));
+        pepe.on(eventName, event.bind(null, pepe));
     }
 
-    const folders = await readdir('./commands/');
+    const folders = await preaddir('./src/commands/');
     folders.forEach((direct) => {
-        const commandFiles = readdirSync(`./commands/${direct}/`).filter((file) => file.endsWith('.js'));
+        const commandFiles = readdirSync(`./src/commands/${direct}/`).filter((file) => file.endsWith('.js'));
         for (const file of commandFiles) {
             const fileExports = require(`../commands/${direct}/${file}`);
             
-            client.commands.set(fileExports.name, props);
-            client.cooldowns.set(fileExports.name, new Discord.Collection());
+            pepe.commands.set(fileExports.name, fileExports);
+            pepe.cooldowns.set(fileExports.name, new Discord.Collection());
             
             fileExports.aliases.forEach((alias) => {
-                client.aliases.set(alias, fileExports.name);
+                pepe.aliases.set(alias, fileExports.name);
             });
         }
     });

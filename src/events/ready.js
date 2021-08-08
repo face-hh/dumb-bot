@@ -1,6 +1,6 @@
 const chalk = require('chalk')
 
-module.exports = async (client) => {
-    console.log(`${chalk.magenta(client.user.tag)} ${chalk.blue('is now online!')}`)
-    client.user.setActivity('in TCOCK', { type: 'WATCHING'})
+module.exports = async (pepe) => {
+    console.log(`${chalk.magenta(pepe.user.tag)} ${chalk.blue('is now online!')}`)
+    pepe.user.setActivity('in TCOCK', { type: 'WATCHING'})
 }

@@ -13,8 +13,7 @@ class Bot extends Client {
 
     start(token) {
         require('./reply')
-        require('dotenv').config()
-        require('./configuration')(client)
+        require('./configuration')(this)
 
         this.login(token)
     }
