@@ -1,9 +1,24 @@
 const util = require('../utility/utils');
+const chatDB = require("../models/chat-bot")
+const fetch = require('node-fetch')
 module.exports = async (pepe, message) => {
 
 	if (message.author.bot || !message.guild) {
 		return;
 	}
+
+	await chatDB.findOne({
+		guildID: message.guild.id
+	  }, async (err, data) => {
+		if (!data) return;
+		if (message.channel.id !== data.channelID) return;
+		fetch(`https://api.monkedev.com/fun/chat?msg=${message.content}&uid=${message.author.id}&key=${process.env.monkeDev}`)
+		  .then(response => response.json())
+		  .then(data => {
+			message.reply(data.response)
+		  })
+	  })
+
 	let prefix;
 
 	let mentionRegex = message.content.match(new RegExp(`^<@!?(${pepe.user.id})>`, 'gi'))
