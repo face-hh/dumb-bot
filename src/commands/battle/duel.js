@@ -11,8 +11,7 @@ module.exports = {
 	ownersOnly: false,
 	cooldown: 10000,
 	expectedArgs: [['user', 'required']],
-	run: async function(pepe, message, args, utils) {
-
+	run: async function(pepe, message, args) {
 		const mentioned = message.mentions.users.first() || pepe.users.cache.get(args[0]);
 
 		if (!mentioned) return message.channel.send('Mention a user or get friends lmao..');
@@ -85,7 +84,6 @@ module.exports = {
 					shield: foundData.PepeShield,
 					icon: await loadImage(foundData[`URL${i}`]),
 				});
-				console.log(gameData);
 
 				if (gameData.length == 2) startTheGame();
 
@@ -100,7 +98,7 @@ module.exports = {
 			});
 			async function startTheGame() {
 
-				const canvas = await utils.displayBattleScreen(gameData, collector);
+				const canvas = await battle_data.utility.displayBattleScreen(gameData, collector);
 
 
 				const embed = new MessageEmbed()
