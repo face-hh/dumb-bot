@@ -84,15 +84,11 @@ module.exports = {
 					healthNow: foundData.PepeHP,
 					shield: foundData.PepeShield,
 					icon: await loadImage(foundData[`URL${i}`]),
-<<<<<<< Updated upstream
-				})
-				console.log(gameData)
-
-				if (gameData.length == 2) startTheGame()
-=======
 				});
+				console.log(gameData);
+
 				if (gameData.length == 2) startTheGame();
->>>>>>> Stashed changes
+
 
 				// Getting and disabling the button
 				rows.components.forEach(async (messagec) => {
@@ -101,72 +97,11 @@ module.exports = {
 					ccac.style = 'red';
 					msg.edit('Choose your pepe!', rows);
 				});
-
 			});
-
 			async function startTheGame() {
-<<<<<<< Updated upstream
-				collector.stop()
-				msg.delete()
-				registerFont('McFont.otf', { family: 'minecraft' });
 
-
-				const canvas = createCanvas(970, 546);
-				console.log(gameData)
-				const ctx = canvas.getContext('2d')
-				ctx.drawImage(gameData[0].icon, 36, 92, 299, 299)
-				ctx.drawImage(gameData[1].icon, 646, 92, 299, 299)
-
-				// Player One
-				// Max
-				ctx.beginPath();
-				ctx.rect(38, 418, 276, 74);
-				ctx.fillStyle = '#060707';
-				ctx.fill();
-				ctx.stroke();
-				ctx.closePath();
-				// Min
-				ctx.beginPath();
-				ctx.rect(38, 418, gameData[1].healthNow * 276 / gameData[1].healthMax, 74);
-				ctx.fillStyle = '#419656';
-				ctx.fill();
-				ctx.stroke();
-				ctx.closePath();
-				// Text
-				ctx.beginPath();
-				ctx.font = '70px "minecraft"';
-				ctx.fillStyle = '#A4A6A5';
-				ctx.textAllign = 'start';
-				ctx.fillText(`${gameData[1].healthNow}/${gameData[1].healthMax}`, 90, 478);
-				ctx.stroke();
-				ctx.closePath();
-
-				// Player Two
-				// Max
-				ctx.beginPath();
-				ctx.rect(681, 413, 276, 74);
-				ctx.fillStyle = '#060707';
-				ctx.fill();
-				ctx.stroke();
-				ctx.closePath();
-				// Min
-				ctx.beginPath();
-				ctx.rect(681, 413, gameData[0].healthNow * 276 / gameData[0].healthMax, 74);
-				ctx.fillStyle = '#419656';
-				ctx.fill();
-				ctx.stroke();
-				ctx.closePath();
-				// Text
-				ctx.beginPath();
-				ctx.font = '70px "minecraft"';
-				ctx.fillStyle = '#A4A6A5';
-				ctx.textAllign = 'start';
-				ctx.fillText(`${gameData[0].healthNow}/${gameData[0].healthMax}`, 734, 478);
-				ctx.stroke();
-				ctx.closePath();
-=======
 				const canvas = await utils.displayBattleScreen(gameData, collector);
->>>>>>> Stashed changes
+
 
 				const embed = new MessageEmbed()
 					.attachFiles(new MessageAttachment(canvas, 'pog.png'))
