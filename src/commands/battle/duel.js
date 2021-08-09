@@ -75,11 +75,10 @@ module.exports = {
 					memer: foundData.realName,
 					healthMax: foundData.PepeHP,
 					healthNow: foundData.PepeHP,
-					shield: foundData.PepeShield,
+					shieldNow: foundData.PepeShield,
+					shieldMax: foundData.PepeShield,
 					icon: await loadImage(foundData[`URL${i}`]),
 				})
-				console.log(gameData)
-
 				if (gameData.length == 2) startTheGame()
 
 				// Getting and disabling the button 
@@ -94,12 +93,10 @@ module.exports = {
 
 			async function startTheGame() {
 				collector.stop()
-				msg.delete()
 				registerFont('McFont.otf', { family: 'minecraft' });
 
 
 				const canvas = createCanvas(970, 546);
-				console.log(gameData)
 				const ctx = canvas.getContext('2d')
 				ctx.drawImage(gameData[0].icon, 36, 92, 299, 299)
 				ctx.drawImage(gameData[1].icon, 646, 92, 299, 299)
@@ -127,6 +124,29 @@ module.exports = {
 				ctx.fillText(`${gameData[1].healthNow}/${gameData[1].healthMax}`, 90, 478);
 				ctx.stroke();
 				ctx.closePath();
+				//Shield
+				//color fill
+				ctx.beginPath();
+				ctx.rect(74, 490, 197, 52);
+				ctx.fillStyle = '#000835';
+				ctx.fill();
+				ctx.stroke();
+				ctx.closePath();
+				// Min
+				ctx.beginPath();
+				ctx.rect(74, 490, gameData[1].shieldNow * 197 / gameData[1].shieldMax, 52);
+				ctx.fillStyle = '#001DBF';
+				ctx.fill();
+				ctx.stroke();
+				ctx.closePath();
+				// Text
+				ctx.beginPath();
+				ctx.font = '65px "minecraft"';
+				ctx.fillStyle = '#A4A6A5';
+				ctx.textAllign = 'start';
+				ctx.fillText(`${gameData[1].shieldNow}/${gameData[1].shieldMax}`, 82, 538);
+				ctx.stroke();
+				ctx.closePath();
 
 				// Player Two
 				// Max
@@ -149,6 +169,29 @@ module.exports = {
 				ctx.fillStyle = '#A4A6A5';
 				ctx.textAllign = 'start';
 				ctx.fillText(`${gameData[0].healthNow}/${gameData[0].healthMax}`, 734, 478);
+				ctx.stroke();
+				ctx.closePath();
+				//Shield
+				//color fill
+				ctx.beginPath();
+				ctx.rect(718, 490, 197, 52);
+				ctx.fillStyle = '#000835';
+				ctx.fill();
+				ctx.stroke();
+				ctx.closePath();
+				// Min
+				ctx.beginPath();
+				ctx.rect(718, 490, gameData[0].shieldNow * 197 / gameData[0].shieldMax, 52);
+				ctx.fillStyle = '#001DBF';
+				ctx.fill();
+				ctx.stroke();
+				ctx.closePath();
+				// Text
+				ctx.beginPath();
+				ctx.font = '65px "minecraft"';
+				ctx.fillStyle = '#A4A6A5';
+				ctx.textAllign = 'start';
+				ctx.fillText(`${gameData[0].shieldNow}/${gameData[0].shieldMax}`, 734, 538);
 				ctx.stroke();
 				ctx.closePath();
 
