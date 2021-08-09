@@ -3,7 +3,7 @@ const { getAudioUrl } = require('google-tts-api');
 module.exports = {
   name: "tts",
   aliases: [],
-  category: 'fun',
+  category: 'voice',
   description: 'text-to-speech command',
   disabled: false,
   ownersOnly: false,
