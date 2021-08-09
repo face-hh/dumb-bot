@@ -3,13 +3,13 @@ const { readdirSync } = require('fs');
 module.exports = {
 	name: 'help',
 	aliases: [],
-	category: 'utility',
+	category: 'fun',
 	description: 'Get help with the bot!',
 	disabled: false,
 	ownersOnly: false,
 	cooldown: 10000,
 	expectedArgs: [['command', 'optional']],
-	run: async function (pepe, message, args, util) {
+	run: async function(pepe, message, args, util) {
 		if (!args[0]) {
 			message.reply(
 				new MessageEmbed()
