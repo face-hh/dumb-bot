@@ -57,7 +57,7 @@ module.exports = async (pepe, message) => {
 		};
 	}
 
-	time.set(message.author.id, now);
+	time.set(message.author.id, Date.now());
 	setTimeout(() => time.delete(message.author.id), cooldownAmount);
 	try {
 		cmd.run(pepe, message, args, util);
