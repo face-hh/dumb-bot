@@ -81,7 +81,8 @@ module.exports = {
 					memer: foundData.realName,
 					healthMax: foundData.PepeHP,
 					healthNow: foundData.PepeHP,
-					shield: foundData.PepeShield,
+					shieldNow: foundData.PepeShield,
+					shieldMax: foundData.PepeShield,
 					icon: await loadImage(foundData[`URL${i}`]),
 				});
 
