@@ -4,7 +4,7 @@ const checkifalreadyplaying = new Discord.Collection();
 module.exports = {
     name: 'coconut',
     aliases: [],
-    category: 'fun',
+    category: 'soundboard',
     description: 'coconut sound board',
     disabled: false,
     ownersOnly: false,
