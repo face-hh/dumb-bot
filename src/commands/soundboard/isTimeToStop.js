@@ -4,7 +4,7 @@ const checkifalreadyplaying = new Discord.Collection();
 module.exports = {
     name: 'timestop',
     aliases: [],
-    category: 'fun',
+    category: 'soundboard',
     description: 'timestop sound board',
     disabled: false,
     ownersOnly: false,
