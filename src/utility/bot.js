@@ -16,6 +16,7 @@ class Bot extends Client {
 
 	start(token) {
 		require('./reply');
+		require('discord-buttons')(this);
 		require('./configuration')(this);
 
 		this.database.connect(process.env.mongo).then(() => {

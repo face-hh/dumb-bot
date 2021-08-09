@@ -1,3 +1,4 @@
+/* eslint-disable valid-typeof */
 const mongoose = require('mongoose');
 const battleDB = require('../models/battle');
 
@@ -18,27 +19,15 @@ module.exports = {
 	 * @param {string} id - The id used to find the user's data
 	*/
 	async getData(id) {
-		await battleDB.findOne({ UserID: id }).lean().exec().then(async (extractedData) => {
-			if (!extractedData) {
-				const newBattle = new battleDB({ UserID: id });
-				const {
-					UserID,
-				} = newBattle;
-				await newBattle.save().catch((err) => {
-					console.log(err);
-				});
-				return {
-					UserID,
-				};
-			}
-			else {
-				const {
-					UserID,
-				} = extractedData;
-				return {
-					UserID,
-				};
-			}
-		});
+		const extractedData = await battleDB.findOne({ UserID: id });
+
+		if (!extractedData || typeof extractedData == null) {
+			const newBattle = new battleDB({ UserID: id }).save();
+			return newBattle;
+		}
+		else {
+			console.log(extractedData);
+			return extractedData;
+		}
 	},
 };
