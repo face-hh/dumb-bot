@@ -12,7 +12,7 @@ module.exports = {
 	cooldown: 20 * 1000,
 	expectedArgs: [],
 	run: async function(pepe, message, args, util) {
-		/*
+		
 		const noPermEmbed = new MessageEmbed()
 			.setDescription(':x: | You need `MANAGE_SERVER` permission to run this command')
 			.setColor("RED")
@@ -20,7 +20,7 @@ module.exports = {
 		if (!message.member.permissions.has('MANAGE_GUILD')) {
 			return message.channel.send(noPermEmbed);
 		}
-		*/
+		
 		const filter = m => m.author.id === message.author.id;
 
 		const collector = new MessageCollector(message.channel, filter, { max: 1 });
