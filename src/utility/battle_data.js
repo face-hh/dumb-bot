@@ -1,0 +1,38 @@
+module.exports.pepes = [
+	{
+		realName: 'susge',
+		names: ['pepesus', 'susge', 'sussy', 'sus'],
+		URL1: 'https://cdn.discordapp.com/attachments/873617811824599100/874233936908259338/869749625807048765_2.png',
+		URL2: 'https://cdn.discordapp.com/attachments/873617811824599100/874234048564826112/869749625807048765_3.png',
+		emoji: '874229992840659024',
+		PepeHP: 20,
+		PepeShield: 5,
+	},
+	{
+		realName: 'madge',
+		names: ['pepemad', 'madge', 'mad'],
+		URL1: 'https://cdn.discordapp.com/attachments/873617811824599100/874233656766504990/855108061526098021_2.png',
+		URL2: 'https://cdn.discordapp.com/attachments/873617811824599100/874233693147918416/855108061526098021_3.png',
+		emoji: '874230505548181564',
+		PepeHP: 15,
+		PepeShield: 9,
+	},
+	{
+		realName: 'sadge',
+		names: ['pepesad', 'sadge', 'sad'],
+		URL1: 'https://cdn.discordapp.com/attachments/873617811824599100/874234288550322176/855108093343301660_2.png',
+		URL2: 'https://cdn.discordapp.com/attachments/873617811824599100/874234187396292608/855108093343301660_1.png',
+		emoji: '874232236457742366',
+		PepeHP: 10,
+		PepeShield: 10,
+	},
+	{
+		realName: 'prayge',
+		names: ['pepepray', 'prayge', 'pray'],
+		URL1: 'https://cdn.discordapp.com/attachments/873617811824599100/874233500138635274/765858161357357116_1.png',
+		URL2: 'https://cdn.discordapp.com/attachments/873617811824599100/874233337726779412/765858161357357116.png',
+		emoji: '874232289159155763',
+		PepeHP: 5,
+		PepeShield: 15,
+	},
+]
