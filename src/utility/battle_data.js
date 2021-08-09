@@ -35,4 +35,4 @@ module.exports.pepes = [
 		PepeHP: 5,
 		PepeShield: 15,
 	},
-]
+];

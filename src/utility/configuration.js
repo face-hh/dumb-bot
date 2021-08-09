@@ -26,5 +26,4 @@ module.exports = async function configuration(pepe) {
 			});
 		}
 	});
-	
 };
