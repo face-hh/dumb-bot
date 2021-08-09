@@ -4,7 +4,7 @@ const checkifalreadyplaying = new Discord.Collection();
 module.exports = {
     name: 'wushbottle',
     aliases: [],
-    category: 'fun',
+    category: 'soundboard',
     description: 'wushbottle sound board',
     disabled: false,
     ownersOnly: false,
