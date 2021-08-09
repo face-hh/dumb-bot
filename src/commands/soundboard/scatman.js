@@ -4,7 +4,7 @@ const checkifalreadyplaying = new Discord.Collection();
 module.exports = {
     name: 'scatman',
     aliases: [],
-    category: 'fun',
+    category: 'soundboard',
     description: 'scatman sound board',
     disabled: false,
     ownersOnly: false,
