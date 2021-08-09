@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const battleDB = require('../models/battle');
-const caseDB = require('../models/case')
+const caseDB = require('../models/cases')
 mongoose.set('useFindAndModify', false);
 
 module.exports = {
@@ -57,7 +57,29 @@ module.exports = {
 		if (!data) {
 			return false;
 		} else {
-			return data.case;
+			return data.caseID;
+		}
+	},
+
+	
+	async updateCase(guildID) {
+		if (!guildID) {
+			throw new Error("Provide guild ID for GetCase function")
+		}
+		const data = await caseDB.findOne({
+			guildID: guildID
+		})
+		if (!data) {
+			new caseDB({
+				guildID: guildID,
+				caseID: 1
+			}).save()
+		} else {
+			await data.delete()
+			new caseDB({
+				guildID: guildID,
+				caseID: data.caseID + 1
+			}).save()
 		}
 	}
 };
