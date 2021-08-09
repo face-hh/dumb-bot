@@ -8,7 +8,7 @@ module.exports = {
 	ownersOnly: false,
 	cooldown: 10000,
 	expectedArgs: [],
-	run: async (_pepe, message, args) => {
+	run: async (_client, message, args) => {
 
 		if (!args[0]) return message.channel.send('Am i just dumb or you want me to say nothing?');
 

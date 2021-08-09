@@ -7,7 +7,7 @@ module.exports = {
 	ownersOnly: false,
 	cooldown: 10000,
 	expectedArgs: [],
-	run: async function(pepe, message) {
+	run: async function(_pepe, message) {
 		const channel = message.member.voice.channel;
 		if (!channel) return message.channel.send('Please connect to a voice channel to use soundboard');
 		channel.join().then(async connection => {
