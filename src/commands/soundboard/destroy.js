@@ -4,7 +4,7 @@ const checkifalreadyplaying = new Discord.Collection();
 module.exports = {
     name: 'destroy',
     aliases: [],
-    category: 'fun',
+    category: 'soundboard',
     description: 'destroy sound board',
     disabled: false,
     ownersOnly: false,
