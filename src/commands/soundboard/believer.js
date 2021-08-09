@@ -4,7 +4,7 @@ const checkifalreadyplaying = new Discord.Collection();
 module.exports = {
     name: 'believer',
     aliases: [],
-    category: 'fun',
+    category: 'soundboard',
     description: 'believer sound board',
     disabled: false,
     ownersOnly: false,
