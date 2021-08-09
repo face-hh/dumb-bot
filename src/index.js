@@ -1,7 +1,7 @@
-require('dotenv').config()
+require('dotenv').config();
 
-const DumbPepe = require('./utility/bot')
+const DumbPepe = require('./utility/bot');
 
-const pepe = new DumbPepe({ disableEveryone: true }, { fetchAllMembers: true })
+const pepe = new DumbPepe({ disableEveryone: true }, { fetchAllMembers: true });
 
-pepe.start(process.env.token)
+pepe.start(process.env.token);
