@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/face-hh/dumb-bot#readme",
   "dependencies": {
+    "canvas": "^2.8.0",
     "chalk": "^4.1.2",
     "discord-buttons": "^4.0.0",
     "discord.js": "^12.5.3",

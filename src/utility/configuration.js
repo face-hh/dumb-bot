@@ -26,4 +26,8 @@ module.exports = async function configuration(pepe) {
 			});
 		}
 	});
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> zyprus
