@@ -37,7 +37,7 @@ module.exports.pepes = [
 		PepeHP: 5,
 		PepeShield: 15,
 	},
-<<<<<<< HEAD
+
 ];
 module.exports.utility = {
 	async displayBattleScreen(gameData, collector) {
@@ -147,6 +147,3 @@ module.exports.utility = {
 		return canvas.toBuffer();
 	},
 };
-=======
-];
->>>>>>> zyprus
