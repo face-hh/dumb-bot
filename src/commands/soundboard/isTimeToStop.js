@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-=======
+
 /* eslint-disable no-unused-vars */
->>>>>>> zyprus
+
 module.exports = {
 	name: 'timestop',
 	aliases: [],
@@ -11,11 +10,9 @@ module.exports = {
 	ownersOnly: false,
 	cooldown: 10000,
 	expectedArgs: [],
-<<<<<<< HEAD
+
 	run: async function(_pepe, message) {
-=======
-	run: async function(pepe, message, args, util) {
->>>>>>> zyprus
+
 		const channel = message.member.voice.channel;
 		if (!channel) return message.channel.send('Please connect to a voice channel to use soundboard');
 		channel.join().then(async connection => {
